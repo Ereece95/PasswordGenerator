@@ -28,14 +28,16 @@ def values():
     random_punc1 = chr(random.randint(33, 152))
     random_punc2 = chr(random.randint(33, 162))
 
-    random_password = uppercase_letter1 + uppercase_letter2 + lowercase_letter1 + lowercase_letter2 \
-                     + random_digit1 + random_digit2 + random_punc1 + random_punc2
+    random_password = "{0}{1}{2}{3}{4}{5}{6}{7}".format(uppercase_letter1, uppercase_letter2, lowercase_letter1,
+                                                        lowercase_letter2, random_digit1, random_digit2, random_punc1,
+                                                        random_punc2)
 
     return random_password
 
 
 # ====== Main ======= #
-randPass = values()
-finalPass = shuffle(randPass)
+if __name__ == "__main__":
+    randPass = values()
+    finalPass = shuffle(randPass)
 
-print("Random password generated: " + finalPass)
+    print("Random password generated: " + finalPass)
